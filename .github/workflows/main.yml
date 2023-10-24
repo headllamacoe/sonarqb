@@ -18,7 +18,7 @@ on:
 jobs:
   build_job:
     name: build
-    runs-on: backstage-actions
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@v2.4.0    
     - uses: actions/setup-node@v2
@@ -35,7 +35,7 @@ jobs:
 #         retention-days: 1
 
   sonarqube:
-    runs-on: backstage-actions
+    runs-on: self-hosted
     needs: [build_job]
     steps:
       - uses: actions/checkout@v2.4.0
